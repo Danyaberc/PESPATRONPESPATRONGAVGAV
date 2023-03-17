@@ -1,86 +1,17 @@
 body {
   margin: 0 auto;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  height: 100vh;
-  font-size: 50px;
-  line-height: 25px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-body .wrapper {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-body .wrapper .container {
-  width: 1200px;
-  height: 800px;
-  border: 2px solid black;
-  position: relative;
 }
 
-.contdog {
-  width: 100%;
-  height: 100%;
-  position: relative;
+.container {
+  border: 1px solid black;
+  width: 1200px;
+  height: 1000px;
 }
-.contdog .containerblock12 {
-  position: absolute;
-  top: 50px;
-  left: 50px;
+
+.pespatron {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-image: url(../img/03.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.contdog .containerblock12 .block1 {
-  border: 1px solid rgb(4, 126, 241);
-  width: 100%;
-  height: 100px;
-  display: flex;
-}
-.contdog .containerblock12 .block1 .block1-1 {
-  width: 100px;
-  height: 100%;
-  border: 2px solid rgb(160, 117, 10);
-}
-.contdog .containerblock12 .block1 .block1-2 {
-  width: 100px;
-  height: 100%;
-  border: 2px solid rgb(143, 192, 7);
-}
-.contdog .containerblock12 .block2 {
-  border: 1px solid rgb(12, 242, 0);
-  width: 100%;
-  height: 100px;
-  display: flex;
-}
-.contdog .containerblock12 .block2 .block2-1 {
-  width: 100px;
-  height: 100%;
-  border: 2px solid rgb(243, 32, 0);
-}
-.contdog .containerblock12 .block2 .block2-2 {
-  width: 100px;
-  height: 100%;
-  border: 2px solid rgb(128, 1, 113);
-}
-
-.button {
-  width: 100px;
-  height: 60px;
-  font-size: 24px;
 }/*# sourceMappingURL=main.css.map */

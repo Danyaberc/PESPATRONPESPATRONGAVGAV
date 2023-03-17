@@ -1,75 +1,52 @@
 let container = document.querySelector('.container')
 
-let button = document.querySelector('.button')
+let dogX = 0;
 
-let pes = []
+let dogY = 0;
 
-button.addEventListener('click', () => {
-   render()
-})
+const renderEl = () => {
+   const patron = `<img src="/img/03.jpg" alt="patron" class="pespatron" 
+   style="position:absolute;top:${dogX}px,left:${dogY}px">`
 
-const render = () => {
-   const html = `<div class ="contdog">
-                  <div class="containerblock12">
-                     <div class = "block1">
-                        <div class="block1-1"></div>
-                        <div class="block1-2"></div>
-                     </div>
-                     <div class ="block2">
-                        <div class="block2-1"></div>
-                        <div class="block2-2"></div>
-                     </div>
-                  </div>
-               </div>`
-
-   container.innerHTML = html
-
-   let containerblock12 = document.querySelector('.containerblock12')
-
-   let contblock1 = document.querySelector('.block1-1')
-
-   contblock1.addEventListener('click', (ev) => {
-      x = ev.pageX - 900 + "px"
-      y = ev.pageY + 100 + "px"
-      controloneone()
-
-   })
-
-   const controloneone = () => {
-      containerblock12.style.top = x;
-      containerblock12.style.left = y;
-      return
-   }
-
-
-   let contblock2 = document.querySelector('.block1-2')
-
-   contblock2.addEventListener('click', (ev) => {
-      x = ev.pageX - 1500 + "px"
-      y = ev.pageY - 100 + "px"
-      controlonetwo()
-
-   })
-
-   const controlonetwo = () => {
-      containerblock12.style.top = x;
-      containerblock12.style.left = y;
-      return
-   }
+   container.innerHTML = patron
 }
 
 
 
-//
+container.addEventListener('click', (ev) => {
+   console.log(ev);
+   if (ev.target.alt != 'patron') { return }
 
-// block.addEventListener('mouseenter', () => {
-//    x = Math.floor(Math.random() * 1000) + "px"
-//    y = Math.floor(Math.random() * 700) + "px"
-//    renderEl();
-// })
+   let mouseX = dogX;
+   let mouseY = dogY;
 
-// const renderEl = () => {
-//    block.style.left = x;
-//    block.style.top = y;
-//    return
-// }
+   let centerUp = mouseX + 200 / 2;
+   let centerLeft = mouseY + 200 / 2;
+
+   let rightUp = mouseX + 200;
+   let leftDown = mouseY + 200;
+
+   dogX = +50 + 'px';
+   dogY = +40 + 'px';
+
+
+   let Xtarget = ev.clientX;
+   let Ytarget = ev.clientY;
+
+   console.log('X', Xtarget, 'Y', Ytarget);
+
+   if ((mouseX <= Xtarget) && (Xtarget <= centerUp) && (mouseY <= Ytarget) && (Ytarget <= centerLeft)) {
+      console.log('Клік верхній лівий кут')
+   }
+   if ((centerUp <= Xtarget) && (Xtarget <= rightUp) && (mouseY <= Ytarget) && (Ytarget <= centerLeft)) {
+      console.log('Клік на верхній правий кут')
+   }
+   if ((mouseX <= Xtarget) && (Xtarget <= centerUp) && (centerLeft <= Ytarget) && (Ytarget <= leftDown)) {
+      console.log('Клік на нижній лівий кут')
+   }
+   if ((centerUp <= Xtarget) && (Xtarget <= rightUp) && (centerLeft <= Ytarget) && (Ytarget <= leftDown)) {
+      console.log('Клік на нижній правий кут')
+   }
+})
+
+renderEl()
